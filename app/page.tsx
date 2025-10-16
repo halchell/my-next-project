@@ -67,7 +67,7 @@ export default function Home() {
       <ul>
         {sliceData.map((article) => (
           <li key={article.id} className={styles.list}>
-            <div className={styles.list}>
+            <div className={styles.link}>
               <Image
                 className={styles.image}
                 src="/no-image.png"
