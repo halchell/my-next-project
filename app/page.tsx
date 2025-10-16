@@ -46,6 +46,7 @@ const data: { contents: News[] } = {
 };
 
 export default function Home() {
+  const sliceData = data.contents.slice(0, 2); // 先頭から2件を取得
   return (
     <>
     <section className={styles.top}>  {/* ヒーローセクション */}
@@ -64,7 +65,7 @@ export default function Home() {
     <section className={styles.news}> {/* ニュースセクション */}
       <h2 className={styles.newsTitle}>News</h2>
       <ul>
-        {data.contents.map((article) => (
+        {sliceData.map((article) => (
           <li key={article.id} className={styles.list}>
             <div className={styles.list}>
               <Image
