@@ -48,7 +48,8 @@ const data: { contents: News[] } = {
 };
 
 export default function Home() {
-  const sliceData = data.contents.slice(0, 2); // 先頭から2件を取得
+  // const sliceData = data.contents.slice(0, 2); // 先頭から2件を取得
+  const sliceData: News = [];
   return (
     <>
     <section className={styles.top}>  {/* ヒーローセクション */}
