@@ -2,17 +2,7 @@ import styles from './page.module.css';
 import Image from 'next/image';
 
 import ButtonLink from './_components/ButtonLink';
-
-// 型定義
-type News = {
-  id: string;
-  title: string;
-  category: {
-    name: string;
-  };
-  publishedAt: string;
-  createdAt: string;
-};
+import { News } from '@/app/_libs/microcms';
 
 // データ定義
 const data: { contents: News[] } = {
