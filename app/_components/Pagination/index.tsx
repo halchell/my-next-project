@@ -4,9 +4,10 @@ import styles from "./index.module.css";
 
 type Props = {
   totalCount: number;
+  current?: number;
 };
 
-export default function Pagination({ totalCount }: Props) {
+export default function Pagination({ totalCount, current }: Props) {
 const pages = Array.from({ length: Math.ceil(totalCount / NEWS_LIST_LIMIT) }, (_, i) => i + 1);
 
   return (
@@ -14,9 +15,13 @@ const pages = Array.from({ length: Math.ceil(totalCount / NEWS_LIST_LIMIT) }, (_
       <ul className={styles.container}>
         {pages.map((p) => (
           <li className={styles.list} key={p}>
-            <Link href={`/news/p/${p}`} className={styles.item}>
-              {p}
-            </Link>
+            {current !== p ? (
+              <Link href={`/news/p/${p}`} className={styles.item}>
+                {p}
+              </Link>
+            ) : (
+              <span className={`${styles.item} ${styles.current}`}>{p}</span>
+            )}
           </li>
         ))}
       </ul>
